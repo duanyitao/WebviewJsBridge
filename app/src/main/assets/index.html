@@ -1,0 +1,39 @@
+<!Document html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webview</title>
+    <style type="text/css">
+        body{
+            background: #cbcc1a;
+        }
+        .btn{
+            line-height: 40px;
+            margin: 10px;
+            background: #cccccc
+        }
+
+    </style>
+</head>
+<body>
+<h2>webview</h2>
+<div><span>请输入要传递的值：</span><input type="text" id="input"/></div>
+    <div id="btn"><span class="btn">点我</span></div>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var input = document.getElementById("input");
+    btn.addEventListener("click",function(){
+        if(window.interface){
+            interface.setValue(input.value)
+        } else {
+            alert("interface not found")
+        }
+    });
+
+    var remote = function(str){
+        input.value = str
+    }
+
+</script>
+</body>
+</html>
